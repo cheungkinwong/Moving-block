@@ -9,5 +9,5 @@ Things still left to do:
 
 [] make the shuttle unable to leave the box
 [] make the collision hit on hitbox rather the center
-[] add background
-[] make sure the planet spawns inside the box
+[x] add background
+[x] make sure the planet spawns inside the box

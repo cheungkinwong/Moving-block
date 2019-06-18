@@ -7,8 +7,8 @@ let y = 0;
 let goal = 0;
 
 function spawntarget() {
-  let randomx = Math.floor(Math.random() * 101) * 5;
-  let randomy = Math.floor(Math.random() * 101) * 5;
+  let randomx = Math.floor(Math.random() * (101 - 10)) * 5;
+  let randomy = Math.floor(Math.random() * (101 - 10)) * 5;
   let spawn = document.createElement("div");
   spawn.id = "target";
   spawn.innerHTML = '<i class="fas fa-globe-asia"></i>';

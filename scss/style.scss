@@ -17,6 +17,8 @@ body {
   margin: auto;
   margin-top: 3em;
   border: 5px solid black;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
 }
 
 #pacman {
@@ -24,12 +26,12 @@ body {
   height: 50px;
   position: relative;
   z-index: 5;
-  color: red;
+  color: white;
 }
 
 #target {
   width: 50px;
   height: 50px;
   position: absolute;
-  color: blue;
+  color: rgb(6, 205, 255);
 }
