@@ -57,22 +57,31 @@ function move(event) {
 }
 
 function left() {
-  x -= 5;
-  pacman.style.left = x + "px";
-  pacman.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
+  if (pacman.offsetLeft > 0) {
+    x -= 5;
+    pacman.style.left = x + "px";
+    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
+  }
 }
 function right() {
-  x += 5;
-  pacman.style.left = x + "px";
-  pacman.innerHTML = '<i class="fas fa-space-shuttle">';
+  if (pacman.offsetLeft < 450) {
+    x += 5;
+    pacman.style.left = x + "px";
+    pacman.innerHTML = '<i class="fas fa-space-shuttle">';
+  }
 }
+
 function up() {
-  y -= 5;
-  pacman.style.top = y + "px";
-  pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
+  if (pacman.offsetTop > 0) {
+    y -= 5;
+    pacman.style.top = y + "px";
+    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
+  }
 }
 function down() {
-  y += 5;
-  pacman.style.top = y + "px";
-  pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
+  if (pacman.offsetTop < 450) {
+    y += 5;
+    pacman.style.top = y + "px";
+    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
+  }
 }

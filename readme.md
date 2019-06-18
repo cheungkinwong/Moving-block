@@ -7,7 +7,7 @@ By Cheung Kin Wong
 
 Things still left to do:
 
-[] make the shuttle unable to leave the box
+[x] make the shuttle unable to leave the box
 [] make the collision hit on hitbox rather the center
 [x] add background
 [x] make sure the planet spawns inside the box
