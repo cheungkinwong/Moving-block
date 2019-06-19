@@ -59,31 +59,35 @@ function move(event) {
 }
 
 function left() {
-  if (shuttle.offsetLeft > 0) {
-    x -= 5;
-    shuttle.style.left = x + "px";
-    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
+  x -= 5;
+  shuttle.style.left = x + "px";
+  shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
+  console.log(parseInt(shuttle.style.left));
+  if (shuttle.offsetLeft < -50) {
+    return (x = 500);
   }
 }
 function right() {
-  if (shuttle.offsetLeft < 450) {
-    x += 5;
-    shuttle.style.left = x + "px";
-    shuttle.innerHTML = '<i class="fas fa-space-shuttle">';
+  x += 5;
+  shuttle.style.left = x + "px";
+  shuttle.innerHTML = '<i class="fas fa-space-shuttle">';
+  if (shuttle.offsetLeft > 500) {
+    return (x = -50);
   }
 }
-
 function up() {
-  if (shuttle.offsetTop > 0) {
-    y -= 5;
-    shuttle.style.top = y + "px";
-    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
+  y -= 5;
+  shuttle.style.top = y + "px";
+  shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
+  if (shuttle.offsetTop < -50) {
+    return (y = 500);
   }
 }
 function down() {
-  if (shuttle.offsetTop < 450) {
-    y += 5;
-    shuttle.style.top = y + "px";
-    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
+  y += 5;
+  shuttle.style.top = y + "px";
+  shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
+  if (shuttle.offsetTop > 500) {
+    return (y = -50);
   }
 }
