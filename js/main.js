@@ -1,5 +1,5 @@
 const box = document.getElementById("container");
-const pacman = document.getElementById("pacman");
+const shuttle = document.getElementById("shuttle");
 const counter = document.getElementById("score");
 
 let x = 0;
@@ -19,21 +19,23 @@ function spawntarget() {
 spawntarget();
 
 function collision() {
-  let spawnx = document.getElementById("target").offsetLeft;
-  let spawny = document.getElementById("target").offsetTop;
-  let pacx = document.getElementById("pacman").offsetLeft;
-  let pacy = document.getElementById("pacman").offsetTop;
-  let distantx = parseInt(spawnx) - parseInt(pacx);
-  let distanty = parseInt(spawny) - parseInt(pacy);
+  let aRect = document.getElementById("shuttle").getBoundingClientRect();
+  let bRect = document.getElementById("target").getBoundingClientRect();
 
-  if (distantx === 0 && distanty === 0) {
+  if (
+    !(
+      aRect.top + aRect.height < bRect.top ||
+      aRect.top > bRect.top + bRect.height ||
+      aRect.left + aRect.width < bRect.left ||
+      aRect.left > bRect.left + bRect.width
+    )
+  ) {
     goal += 1;
     let target = document.getElementById("target");
     counter.innerHTML = goal;
     target.remove();
     spawntarget();
   }
-  console.log(spawnx, spawny);
 }
 
 document.addEventListener("keydown", move);
@@ -57,31 +59,31 @@ function move(event) {
 }
 
 function left() {
-  if (pacman.offsetLeft > 0) {
+  if (shuttle.offsetLeft > 0) {
     x -= 5;
-    pacman.style.left = x + "px";
-    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
+    shuttle.style.left = x + "px";
+    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
   }
 }
 function right() {
-  if (pacman.offsetLeft < 450) {
+  if (shuttle.offsetLeft < 450) {
     x += 5;
-    pacman.style.left = x + "px";
-    pacman.innerHTML = '<i class="fas fa-space-shuttle">';
+    shuttle.style.left = x + "px";
+    shuttle.innerHTML = '<i class="fas fa-space-shuttle">';
   }
 }
 
 function up() {
-  if (pacman.offsetTop > 0) {
+  if (shuttle.offsetTop > 0) {
     y -= 5;
-    pacman.style.top = y + "px";
-    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
+    shuttle.style.top = y + "px";
+    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
   }
 }
 function down() {
-  if (pacman.offsetTop < 450) {
+  if (shuttle.offsetTop < 450) {
     y += 5;
-    pacman.style.top = y + "px";
-    pacman.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
+    shuttle.style.top = y + "px";
+    shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
   }
 }

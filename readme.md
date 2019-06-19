@@ -8,6 +8,8 @@ By Cheung Kin Wong
 Things still left to do:
 
 [x] make the shuttle unable to leave the box
-[] make the collision hit on hitbox rather the center
+[x] make the collision hit on hitbox rather the center
 [x] add background
 [x] make sure the planet spawns inside the box
+
+https://cheungkinwong.github.io/Moving-block/
