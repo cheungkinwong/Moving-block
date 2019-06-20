@@ -59,7 +59,7 @@ function move(event) {
 }
 
 function left() {
-  x -= 10;
+  x -= 20;
   shuttle.style.left = x + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
   console.log(parseInt(shuttle.style.left));
@@ -68,7 +68,7 @@ function left() {
   }
 }
 function right() {
-  x += 10;
+  x += 20;
   shuttle.style.left = x + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle">';
   if (shuttle.offsetLeft > 1200) {
@@ -76,7 +76,7 @@ function right() {
   }
 }
 function up() {
-  y -= 10;
+  y -= 20;
   shuttle.style.top = y + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
   if (shuttle.offsetTop < -50) {
@@ -84,7 +84,7 @@ function up() {
   }
 }
 function down() {
-  y += 10;
+  y += 20;
   shuttle.style.top = y + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
   if (shuttle.offsetTop > 600) {

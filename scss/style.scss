@@ -27,7 +27,8 @@ body {
   position: relative;
   z-index: 5;
   color: white;
-  transition: ease-in;
+  transition-timing-function: ease-in;
+  transition: 0.2s;
 }
 
 #target {
