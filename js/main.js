@@ -7,8 +7,8 @@ let y = 0;
 let goal = 0;
 
 function spawntarget() {
-  let randomx = Math.floor(Math.random() * (101 - 10)) * 5;
-  let randomy = Math.floor(Math.random() * (101 - 10)) * 5;
+  let randomx = Math.floor(Math.random() * (101 - 10)) * 12;
+  let randomy = Math.floor(Math.random() * (101 - 10)) * 6;
   let spawn = document.createElement("div");
   spawn.id = "target";
   spawn.innerHTML = '<i class="fas fa-globe-asia"></i>';
@@ -59,35 +59,35 @@ function move(event) {
 }
 
 function left() {
-  x -= 5;
+  x -= 10;
   shuttle.style.left = x + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-flip-horizontal" >';
   console.log(parseInt(shuttle.style.left));
   if (shuttle.offsetLeft < -50) {
-    return (x = 500);
+    return (x = 1200);
   }
 }
 function right() {
-  x += 5;
+  x += 10;
   shuttle.style.left = x + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle">';
-  if (shuttle.offsetLeft > 500) {
+  if (shuttle.offsetLeft > 1200) {
     return (x = -50);
   }
 }
 function up() {
-  y -= 5;
+  y -= 10;
   shuttle.style.top = y + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-270" >';
   if (shuttle.offsetTop < -50) {
-    return (y = 500);
+    return (y = 600);
   }
 }
 function down() {
-  y += 5;
+  y += 10;
   shuttle.style.top = y + "px";
   shuttle.innerHTML = '<i class="fas fa-space-shuttle fa-rotate-90" >';
-  if (shuttle.offsetTop > 500) {
+  if (shuttle.offsetTop > 600) {
     return (y = -50);
   }
 }

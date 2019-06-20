@@ -12,8 +12,8 @@ body {
 }
 
 #container {
-  width: 500px;
-  height: 500px;
+  width: 1200px;
+  height: 600px;
   position: relative;
   margin: auto;
   margin-top: 3em;
@@ -28,6 +28,8 @@ body {
   position: relative;
   z-index: 5;
   color: white;
+  -webkit-transition: ease-in;
+  transition: ease-in;
 }
 
 #target {
